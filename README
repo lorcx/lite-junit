@@ -1,0 +1,6 @@
+junit精简版
+
+Command模式：表达一个测试用例 （调用者和接受者解耦）
+Template Method：实现数据的准备和清理
+Composite：屏蔽一个和多个的差别
+Collect Parameter：隔离测试用例和测试结果
