@@ -1,11 +1,13 @@
 package v3.runners;
 
 import v3.After;
+import v3.AfterClass;
 import v3.Before;
 import v3.notification.Failure;
 import v3.notification.RunNotifier;
 import v3.runner.Description;
 import v3.runner.Runner;
+import v3.sample.BeforeClass;
 
 /**
  * Created by lx on 2017/8/27.
@@ -35,7 +37,7 @@ public class TestClassRunner extends Runner{
     @Override
     public void run(RunNotifier notifier) {
         BeforeAndAfterRunner runner = new BeforeAndAfterRunner(getTestClass(),
-                Before.class, After.class, null) {
+                BeforeClass.class, AfterClass.class, null) {
             @Override
             protected void runUnprotected() {
                 enclosedRunner.run(notifier);

@@ -43,7 +43,16 @@ public abstract class BeforeAndAfterRunner {
     }
 
     private void runAfters() {
-
+        List<Method> afters= testIntrospector.getTestMethods(afterAnnotion);
+        for (Method after : afters) {
+            try {
+                invokeMethod(after);
+            } catch (InvocationTargetException e) {
+                addFailure(e.getTargetException());
+            } catch (Throwable e) {
+                addFailure(e); // Untested, but seems impossible
+            }
+        }
     }
 
     protected abstract void runUnprotected();
