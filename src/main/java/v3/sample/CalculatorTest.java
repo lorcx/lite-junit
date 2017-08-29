@@ -1,12 +1,10 @@
 package v3.sample;
 
-
 import v3.After;
 import v3.AfterClass;
 import v3.Before;
 import v3.Test;
 import v3.runners.JUnitCore;
-
 import static v3.Assert.*;
 
 public class CalculatorTest {
@@ -25,7 +23,6 @@ public class CalculatorTest {
 
     @Test
     public void testAdd() {
-
         calculator.add(10);
         assertEquals(10, calculator.getResult());
     }
@@ -50,6 +47,5 @@ public class CalculatorTest {
 
     public static void main(String[] args) {
         JUnitCore.runClass(CalculatorTest.class);
-
     }
 }
